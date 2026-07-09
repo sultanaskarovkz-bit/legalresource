@@ -429,8 +429,13 @@ footer a:hover{color:var(--gold)}
 @media(max-width:640px){
   .section{padding:70px 0}
   .container{padding:0 18px}
-  .g-3,.team-grid,.case-grid,.rev-grid,.steps,.cert-grid,.foot-grid,.trust-grid{grid-template-columns:1fr}
-  .trust-item{border-right:none;border-bottom:1px solid var(--line-dark)}
+  .g-3,.team-grid,.case-grid,.rev-grid,.steps,.cert-grid,.foot-grid{grid-template-columns:1fr}
+  /* Счётчики в одну строку на телефоне */
+  .trust-grid{grid-template-columns:repeat(4,1fr)}
+  .trust-item{padding:20px 5px;border-right:1px solid var(--line-dark);border-bottom:none}
+  .trust-item:last-child{border-right:none}
+  .trust-item .num{font-size:1.32rem}
+  .trust-item .lbl{font-size:.6rem;margin-top:5px;line-height:1.25}
   /* Компактная шапка на телефоне */
   header .bar{padding:10px 0}
   header.scrolled .bar{padding:8px 0}
@@ -461,9 +466,38 @@ footer a:hover{color:var(--gold)}
   body{padding-bottom:78px}
   .header-cta .btn-gold{padding:11px 18px;font-size:.86rem}
   .cert-grid{grid-template-columns:repeat(2,1fr)}
-  .section-head{margin-bottom:40px}
-  .band{padding:80px 0}
+  /* Общая мобильная оптимизация секций */
+  .section{padding:52px 0}
+  .section-head{margin-bottom:28px}
+  .section-head h2{font-size:1.55rem;margin:12px 0 10px}
+  .section-head p{font-size:.92rem}
+  .card{padding:22px 20px}
+  .card .ic{width:46px;height:46px;margin-bottom:12px}
+  .card h3{font-size:1.12rem}
+  .card p{font-size:.92rem}
+  .svc-card{padding:24px 20px}
+  .svc-card .no{font-size:2.6rem;top:12px;right:16px}
+  .svc-card h3{font-size:1.28rem}
+  .svc-list li{font-size:.9rem}
+  .why-grid{gap:26px}
+  .why-visual{min-height:300px}
+  .why-item{gap:14px}
+  .why-item .ic{width:42px;height:42px}
+  .step{padding:22px 20px}
+  .member .info{padding:18px 20px}
+  .member .info h3{font-size:1.18rem}
+  .case{padding:22px 20px}
+  .rev{padding:22px 20px}
+  .qa button{padding:17px 18px;font-size:1rem}
+  .qa .ans p{padding:0 18px 17px}
+  .final .ph-big{font-size:1.55rem}
+  .final p{font-size:1rem}
+  footer{padding:48px 0 24px}
+  .foot-grid{gap:26px;padding-bottom:30px}
+  .band{padding:62px 0}
+  .band .mark-q{font-size:3rem}
   .band-bg{background-attachment:scroll}
+  .marquee{padding:12px 0}
   .marquee-track span{font-size:1.05rem}
   .marquee-track i{margin:0 16px}
   .fab{right:14px;bottom:86px;gap:10px}
@@ -583,9 +617,9 @@ footer a:hover{color:var(--gold)}
   <div class="container">
     <div class="trust-grid">
       <div class="trust-item reveal"><div class="num" data-target="1500" data-suffix="+">0</div><div class="lbl">Завершённых дел</div></div>
-      <div class="trust-item reveal"><div class="num" data-target="94" data-suffix="%">0</div><div class="lbl">Дел с результатом в пользу клиента</div></div>
-      <div class="trust-item reveal"><div class="num" data-target="10" data-suffix="">0</div><div class="lbl">Лет юридической практики</div></div>
-      <div class="trust-item reveal"><div class="num" data-target="15" data-suffix=" мин">0</div><div class="lbl">Средний срок ответа на заявку</div></div>
+      <div class="trust-item reveal"><div class="num" data-target="94" data-suffix="%">0</div><div class="lbl">В пользу клиента</div></div>
+      <div class="trust-item reveal"><div class="num" data-target="10" data-suffix="">0</div><div class="lbl">Лет практики</div></div>
+      <div class="trust-item reveal"><div class="num" data-target="15" data-suffix=" мин">0</div><div class="lbl">Ответ на заявку</div></div>
     </div>
   </div>
 </section>
@@ -628,6 +662,43 @@ footer a:hover{color:var(--gold)}
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
         <h3>Нужно защитить бизнес</h3>
         <p>Договоры, сделки, корпоративные споры.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team section" id="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Наша команда</span>
+      <h2>Люди, которым можно доверить дело</h2>
+      <p>Опытные специалисты с подтверждённой квалификацией.</p>
+    </div>
+    <div class="team-grid">
+      <div class="member reveal">
+        <div class="ph"><img src="assets/img/bauyrzhan-bazhanov.jpg" alt="Бауыржан Бижанов, адвокат по уголовным делам"></div>
+        <div class="info">
+          <div class="role">Адвокат по уголовным делам</div>
+          <h3>Бауыржан Бижанов</h3>
+          <p>Лицензированный адвокат. Уголовная защита, лекции в вузах, благодарности города.</p>
+        </div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/img/batyrkhan-usenov.jpg" alt="Батырхан Усенов, судебный юрист"></div>
+        <div class="info">
+          <div class="role">Судебный юрист</div>
+          <h3>Батырхан Усенов</h3>
+          <p>Судебные споры и представительство. Отмечен Маслихатом Алматы.</p>
+        </div>
+      </div>
+      <div class="member reveal">
+        <div class="ph"><img src="assets/img/olesya-klimova.jpg" alt="Олеся Климова, юрист по гражданским спорам"></div>
+        <div class="info">
+          <div class="role">Юрист по гражданским спорам</div>
+          <h3>Олеся Климова</h3>
+          <p>Гражданские и семейные дела, споры по договорам и наследству.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -756,43 +827,6 @@ footer a:hover{color:var(--gold)}
       <div class="step reveal"><div class="n">2</div><h4>Правовая стратегия</h4><p>Составляем чёткий план действий и согласовываем его с вами до начала работы.</p></div>
       <div class="step reveal"><div class="n">3</div><h4>Защита интересов</h4><p>Готовим документы, ведём переговоры и представляем вас в суде и госорганах.</p></div>
       <div class="step reveal"><div class="n">4</div><h4>Контроль результата</h4><p>Доводим дело до исполнения решения и сопровождаем до полного закрытия вопроса.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team section" id="team">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Наша команда</span>
-      <h2>Люди, которым можно доверить дело</h2>
-      <p>Опытные специалисты с подтверждённой квалификацией.</p>
-    </div>
-    <div class="team-grid">
-      <div class="member reveal">
-        <div class="ph"><img src="assets/img/bauyrzhan-bazhanov.jpg" alt="Бауыржан Бижанов, адвокат по уголовным делам"></div>
-        <div class="info">
-          <div class="role">Адвокат по уголовным делам</div>
-          <h3>Бауыржан Бижанов</h3>
-          <p>Лицензированный адвокат. Уголовная защита, лекции в вузах, благодарности города.</p>
-        </div>
-      </div>
-      <div class="member reveal">
-        <div class="ph"><img src="assets/img/batyrkhan-usenov.jpg" alt="Батырхан Усенов, судебный юрист"></div>
-        <div class="info">
-          <div class="role">Судебный юрист</div>
-          <h3>Батырхан Усенов</h3>
-          <p>Судебные споры и представительство. Отмечен Маслихатом Алматы.</p>
-        </div>
-      </div>
-      <div class="member reveal">
-        <div class="ph"><img src="assets/img/olesya-klimova.jpg" alt="Олеся Климова, юрист по гражданским спорам"></div>
-        <div class="info">
-          <div class="role">Юрист по гражданским спорам</div>
-          <h3>Олеся Климова</h3>
-          <p>Гражданские и семейные дела, споры по договорам и наследству.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
